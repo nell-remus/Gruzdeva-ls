@@ -1,12 +1,17 @@
 .about-section {
-    background-color: #222427;
+    background: url(../images/content/back-about.png);
     padding-top: 55px;
 }
+
 .about {
 display: flex;
 }
 .user-info__avatar {
     margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .about__disclamer {
     margin-bottom: 30px;
@@ -22,14 +27,26 @@ display: flex;
     font-weight: 900;
 }
 
-.about__desc p {
+.about__desc{
     margin-bottom: 105px;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.502);
     line-height: 1.875;
     font-weight: bold;
-    &:last-child {
-        margin-bottom: 0;
+}
+
+.about__expl {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.502);
+    line-height: 1.875;
+    font-style: italic;
+    &::before {
+        content: "*";
+        font-size: 48px;
+        color: rgba(219, 2, 0, 0.102);
         font-style: italic;
+        position: absolute;
+        display: block;
+        transform: translate(-70px, -20px);
     }
 }

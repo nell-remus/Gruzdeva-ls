@@ -1,14 +1,21 @@
-.footer {
+.footer-container {
+    padding-top: 65px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
     background: #222427;
+    grid-template-columns: 1fr 1fr 2fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "date user f-menu f-menu"
+                         ". f-text desc message"
+                         ". . social autor";
+    align-items: center;
+    justify-items: start;
 }
-.footer-container__content-section-one {
-    display: flex;
-}
-.footer-container__content-section-two {
-    display: flex;
-}
+
 .socials-item {
-    border: 2px solid rgba(255, 255, 255 .5);
+    padding: 15px;
+    border: 1px solid #656668;
     border-radius: 50%;
     filter: invert(100%);
     opacity: 0.5;
@@ -17,3 +24,93 @@
         margin-right: 0;
     }
 }
+
+.footer__date {
+    font-size: 48px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.102);
+    grid-area: date;
+}
+.footer__user {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    grid-area: user;
+}
+.footer__text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.149);
+    line-height: 1.875;
+    grid-area: f-text;
+}
+.footer__menu {
+    grid-area: f-menu;
+}
+.footer__desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.875;
+    grid-area: desc;
+}
+.footer__links {
+    grid-area: social;
+}
+.footer__message {
+    display: grid;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.875;
+    grid-area: message;
+}
+
+.footer__autor {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    grid-area: autor;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .footer-container {
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "date f-menu f-menu"
+                         "user desc message"
+                         "f-text social autor";
+    align-items: center;
+    justify-items: start;
+    }
+}
+@media screen and (min-width: 321px) {
+    .footer-container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "date f-menu"
+                         "user desc"
+                         "f-text social"
+                         ". message"
+                         ". autor";
+    align-items: center;
+    justify-items: stretch;
+    }
+}
+@media screen and (max-width: 320px) {
+    .footer-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: "date"
+                         "user"
+                         "f-text"
+                         "f-menu"
+                         "desc"
+                         "social"
+                         "message"
+                         "autor";
+    align-items: center;
+    justify-items: stretch;
+    }
+    div {
+        max-width: 320px;
+    }
+} 
